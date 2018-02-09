@@ -4556,7 +4556,6 @@ priv.no
 mil.no
 stat.no
 dep.no
-kommune.no
 herad.no
 // no geographical names : http://www.norid.no/regelverk/vedlegg-b.en.html
 // counties
