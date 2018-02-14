@@ -6255,7 +6255,6 @@ org.ug
 uk
 ac.uk
 co.uk
-gov.uk
 ltd.uk
 me.uk
 net.uk
