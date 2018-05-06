@@ -4552,7 +4552,7 @@ museum.no
 idrett.no
 priv.no
 // Non-Norid generic domains : http://www.norid.no/regelverk/vedlegg-d.en.html
-mil.no
+//// mil.no
 stat.no
 dep.no
 herad.no
