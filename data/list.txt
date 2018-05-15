@@ -4570,7 +4570,6 @@ nl.no
 nt.no
 of.no
 ol.no
-oslo.no
 rl.no
 sf.no
 st.no
