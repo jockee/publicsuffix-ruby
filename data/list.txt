@@ -5833,7 +5833,6 @@ g.se
 h.se
 i.se
 k.se
-komforb.se
 kommunalforbund.se
 komvux.se
 l.se
