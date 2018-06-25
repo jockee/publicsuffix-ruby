@@ -6202,7 +6202,6 @@ lt.ua
 lugansk.ua
 lutsk.ua
 lv.ua
-lviv.ua
 mk.ua
 mykolaiv.ua
 nikolaev.ua
