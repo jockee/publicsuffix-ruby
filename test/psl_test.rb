@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 require "public_suffix"
 
@@ -5,7 +7,7 @@ require "public_suffix"
 # the definitions satisfies the test suite.
 class PslTest < Minitest::Test
 
-  ROOT = File.expand_path("../../", __FILE__)
+  ROOT = File.expand_path("..", __dir__)
 
   # rubocop:disable Security/Eval
   def self.tests
@@ -13,6 +15,7 @@ class PslTest < Minitest::Test
       line = line.strip
       next if line.empty?
       next if line.start_with?("//")
+
       input, output = line.split(", ")
 
       # handle the case of eval("null"), it must be eval("nil")
@@ -24,7 +27,7 @@ class PslTest < Minitest::Test
       [input, output]
     end
   end
-  # rubocop:enable
+  # rubocop:enable Security/Eval
 
 
   def test_valid
@@ -35,7 +38,7 @@ class PslTest < Minitest::Test
     failures = []
     self.class.tests.each do |input, output|
       # Punycode domains are not supported ATM
-      next if input =~ /xn\-\-/
+      next if input =~ /xn--/
 
       domain = PublicSuffix.domain(input) rescue nil
       failures << [input, output, domain] if output != domain

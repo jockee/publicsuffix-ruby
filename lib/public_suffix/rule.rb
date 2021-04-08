@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # = Public Suffix
 #
 # Domain name parser based on the Public Suffix List.
 #
-# Copyright (c) 2009-2017 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2020 Simone Carletti <weppos@weppos.net>
 
 module PublicSuffix
 
@@ -20,7 +22,7 @@ module PublicSuffix
   module Rule
 
     # @api internal
-    Entry = Struct.new(:type, :length, :private)
+    Entry = Struct.new(:type, :length, :private) # rubocop:disable Lint/StructNewOverride
 
     # = Abstract rule class
     #

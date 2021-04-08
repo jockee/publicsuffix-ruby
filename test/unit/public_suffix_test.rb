@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class PublicSuffixTest < Minitest::Test
@@ -87,8 +89,8 @@ class PublicSuffixTest < Minitest::Test
   end
 
   def test_self_parse_with_unallowed_domain
-    error = assert_raises(PublicSuffix::DomainNotAllowed) { PublicSuffix.parse("example.ke") }
-    assert_match(/example\.ke/, error.message)
+    error = assert_raises(PublicSuffix::DomainNotAllowed) { PublicSuffix.parse("example.bd") }
+    assert_match(/example\.bd/, error.message)
   end
 
   def test_self_parse_with_uri
@@ -128,7 +130,7 @@ class PublicSuffixTest < Minitest::Test
   end
 
   def test_self_domain_with_unallowed_name
-    assert_nil PublicSuffix.domain("example.ke")
+    assert_nil PublicSuffix.domain("example.bd")
   end
 
   def test_self_domain_with_blank_sld
@@ -139,13 +141,13 @@ class PublicSuffixTest < Minitest::Test
 
   def test_self_normalize
     [
-        ["com", "com"],
-        ["example.com", "example.com"],
-        ["www.example.com", "www.example.com"],
+      ["com", "com"],
+      ["example.com", "example.com"],
+      ["www.example.com", "www.example.com"],
 
-        ["example.com.",  "example.com"],     # strip FQDN
-        [" example.com ", "example.com"],     # strip spaces
-        ["Example.COM",   "example.com"],     # downcase
+      ["example.com.",  "example.com"],     # strip FQDN
+      [" example.com ", "example.com"],     # strip spaces
+      ["Example.COM",   "example.com"],     # downcase
     ].each do |input, output|
       assert_equal output, PublicSuffix.normalize(input)
     end
@@ -153,9 +155,9 @@ class PublicSuffixTest < Minitest::Test
 
   def test_normalize_blank
     [
-        nil,
-        "",
-        " ",
+      nil,
+      "",
+      " ",
     ].each do |input|
       error = PublicSuffix.normalize(input)
       assert_instance_of PublicSuffix::DomainInvalid, error
@@ -165,7 +167,7 @@ class PublicSuffixTest < Minitest::Test
 
   def test_normalize_scheme
     [
-        "https://google.com",
+      "https://google.com",
     ].each do |input|
       error = PublicSuffix.normalize(input)
       assert_instance_of PublicSuffix::DomainInvalid, error
@@ -175,7 +177,7 @@ class PublicSuffixTest < Minitest::Test
 
   def test_normalize_leading_dot
     [
-        ".google.com",
+      ".google.com",
     ].each do |input|
       error = PublicSuffix.normalize(input)
       assert_instance_of PublicSuffix::DomainInvalid, error

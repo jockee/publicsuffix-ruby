@@ -2,14 +2,21 @@
 
 <tt>PublicSuffix</tt> is a Ruby domain name parser based on the [Public Suffix List](https://publicsuffix.org/).
 
-[![Build Status](https://travis-ci.org/weppos/publicsuffix-ruby.svg?branch=master)](https://travis-ci.org/weppos/publicsuffix-ruby)
+[![Build Status](https://travis-ci.com/weppos/publicsuffix-ruby.svg?branch=master)](https://travis-ci.com/weppos/publicsuffix-ruby)
+[![Tidelift dependencies](https://tidelift.com/badges/package/rubygems/public_suffix)](https://tidelift.com/subscription/pkg/rubygems-public-suffix?utm_source=rubygems-public-suffix&utm_medium=referral&utm_campaign=enterprise)
+
+
+## Links
+
+- [Homepage](https://simonecarletti.com/code/publicsuffix-ruby)
+- [Repository](https://github.com/weppos/publicsuffix-ruby)
+- [API Documentation](https://rubydoc.info/gems/public_suffix)
+- [Introducing the Public Suffix List library for Ruby](https://simonecarletti.com/blog/2010/06/public-suffix-list-library-for-ruby/)
 
 
 ## Requirements
 
-- Ruby >= 2.1
-
-For an older versions of Ruby use a previous release.
+<tt>PublicSuffix</tt> requires **Ruby >= 2.3**. For an older versions of Ruby use a previous release.
 
 
 ## Installation
@@ -17,7 +24,7 @@ For an older versions of Ruby use a previous release.
 You can install the gem manually:
 
 ```shell
-$ gem install public_suffix
+gem install public_suffix
 ```
 
 Or use Bundler and define it as a dependency in your `Gemfile`:
@@ -173,21 +180,19 @@ Not convinced yet? Check out [this real world example](https://stackoverflow.com
 No. <tt>PublicSuffix</tt> comes with a bundled list. It does not make any HTTP requests to parse or validate a domain.
 
 
-## Feedback and bug reports
+## Support
 
-If you use this library and find yourself missing any functionality, please [let me know](mailto:weppos@weppos.net).
+Library documentation is auto-generated from the [README](https://github.com/weppos/publicsuffix-ruby/blob/master/README.md) and the source code, and it's available at https://rubydoc.info/gems/public_suffix.
 
-Pull requests are very welcome! Please include tests and/or feature coverage for every patch, and create a topic branch for every separate change you make.
+- The PublicSuffix bug tracker is here: https://github.com/weppos/publicsuffix-ruby/issues
+- The PublicSuffix code repository is here: https://github.com/weppos/publicsuffix-ruby. Contributions are welcome! Please include tests and/or feature coverage for every patch, and create a topic branch for every separate change you make.
 
-Report issues or feature requests to [GitHub Issues](https://github.com/weppos/publicsuffix-ruby/issues).
+[Consider subscribing to Tidelift which provides Enterprise support for this project](https://tidelift.com/subscription/pkg/rubygems-public-suffix?utm_source=rubygems-public-suffix&utm_medium=referral&utm_campaign=readme) as part of the Tidelift Subscription. Tidelift subscriptions also help the maintainers by funding the project, which in turn allows us to ship releases, bugfixes, and security updates more often.
 
 
-## More
+## Security and Vulnerability Reporting
 
-- [Homepage](https://simonecarletti.com/code/publicsuffix-ruby)
-- [Repository](https://github.com/weppos/publicsuffix-ruby)
-- [API Documentation](http://rubydoc.info/gems/public_suffix)
-- [Introducing the Public Suffix List library for Ruby](https://simonecarletti.com/blog/2010/06/public-suffix-list-library-for-ruby/)
+Full information and description of our security policy please visit [`SECURITY.md`](SECURITY.md)
 
 
 ## Changelog
@@ -197,6 +202,16 @@ See the [CHANGELOG.md](CHANGELOG.md) file for details.
 
 ## License
 
-Copyright (c) 2009-2017 Simone Carletti. This is Free Software distributed under the MIT license.
+Copyright (c) 2009-2020 Simone Carletti. This is Free Software distributed under the MIT license.
 
 The [Public Suffix List source](https://publicsuffix.org/list/) is subject to the terms of the Mozilla Public License, v. 2.0.
+
+## Definitions
+
+tld = Top level domain, this is in reference to the last segment of a domain, sometimes the part that is directly after the "dot" symbol. For example, `mozilla.org`, the `.org` portion is the tld.
+
+sld = Second level domain, a domain that is directly below a top-level domain. For example, in `https://www.mozilla.org/en-US/`, `mozilla` is the second-level domain of the .org tld.
+
+trd = Transit routing domain, or known as a subdomain. This is the part of the domain that is before the sld or root domain. For example, in `https://www.mozilla.org/en-US/`, `www` is the trd.
+
+FQDN = Fully Qualified Domain Names, are domain names that are written with the hostname and the domain name, and include the top-level domain, the format looks like `[hostname].[domain].[tld].` for ex. `[www].[mozilla].[org]`. 

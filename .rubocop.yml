@@ -1,5 +1,5 @@
 inherit_from:
-  - .rubocop_defaults.yml
+  - .rubocop_opinionated.yml
 
 AllCops:
   Exclude:
@@ -14,13 +14,17 @@ AllCops:
     - 'test/benchmarks/**/*'
     - 'test/profilers/**/*'
 
+# I often use @_variable to avoid clashing.
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
 Style/ClassAndModuleChildren:
   Exclude:
     - 'spec/**/*_spec.rb'
     - 'test/**/*_test.rb'
 
 # Dear Rubocop, I don't want to use String#strip_heredoc
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Enabled: false
 
 Style/WordArray:

@@ -1,10 +1,15 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 gemspec
 
-gem "coveralls", require: false
+gem "rake"
+
+gem "codecov", require: false
+gem "memory_profiler", require: false
 gem "minitest"
 gem "minitest-reporters"
-gem "rubocop", require: false
-
-gem "memory_profiler", require: false
+gem "mocha"
+gem "rubocop", "~>0.90", require: false
+gem "yard"
